@@ -63,8 +63,8 @@ python-selenium-qa-demo/
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/avinav456/python-selenium-qa-demo.git
-cd python-selenium-qa-demo
+git clone https://github.com/avinav456/flask-selenium-automation.git
+cd flask-selenium-automation
 ```
 
 ### 2. Create a virtual environment
