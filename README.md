@@ -1,4 +1,4 @@
-# Python Selenium QA Demo  
+# Python Selenium QA   
 
 🚀 End-to-end **QA automation project** built with **Python**, **Flask**, and **Selenium WebDriver**.  
 This project demonstrates how to build a small **login + dashboard app** and validate it using an **automated test suite** following QA best practices.  
