@@ -9,7 +9,7 @@ def wait_for_port(host, port, timeout=20.0):
         with contextlib.closing(socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as s:
             s.settimeout(1)
             if s.connect_ex((host, port)) == 0:
-                return True
+                return  True
         time.sleep(0.2)
     raise RuntimeError("Server did not start on time")
 
