@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Dashboard</h1>
+  <section aria-labelledby="create-item">
+    <h2 id="create-item">Create Item</h2>
+    <form method="post" action="{{ url_for('main.create_item') }}" aria-label="Create Item Form">
+      <div class="field">
+        <label for="title">Title</label>
+        <input id="title" name="title" required>
+      </div>
+      <div class="field">
+        <label for="description">Description</label>
+        <textarea id="description" name="description"></textarea>
+      </div>
+      <button id="createBtn" type="submit">Add</button>
+    </form>
+  </section>
+
+  <section aria-labelledby="your-items">
+    <h2 id="your-items">Your Items</h2>
+    {% if items %}
+      <table aria-label="Items Table">
+        <thead>
+          <tr><th>Title</th><th>Description</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+          <tr data-id="{{ item.id }}">
+            <td>
+              <form method="post" action="{{ url_for('main.update_item', item_id=item.id) }}" class="inline-form">
+                <input name="title" value="{{ item.title }}" aria-label="Title for item {{ item.id }}">
+                <input name="description" value="{{ item.description or '' }}" aria-label="Description for item {{ item.id }}">
+                <button type="submit" class="updateBtn">Save</button>
+              </form>
+            </td>
+            <td>{{ item.description }}</td>
+            <td>
+              <form method="post" action="{{ url_for('main.delete_item', item_id=item.id) }}" class="inline-form">
+                <button type="submit" class="deleteBtn">Delete</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No items yet.</p>
+    {% endif %}
+  </section>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Login</h1>
+  <form method="post" aria-label="Login Form">
+    <div class="field">
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" required autocomplete="email">
+    </div>
+    <div class="field">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" required autocomplete="current-password">
+    </div>
+    <button id="loginBtn" type="submit">Login</button>
+  </form>
+{% endblock %}
