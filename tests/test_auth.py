@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
-from tests.pages.register_page import RegisterPage
-from tests.pages.login_page import LoginPage
+from .pages.register_page import RegisterPage
+from .pages.login_page import LoginPage
 
 def test_register_and_login_flow(driver, test_user):
     reg = RegisterPage(driver)
